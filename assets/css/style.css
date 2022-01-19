@@ -1100,7 +1100,7 @@ ul {
     position: relative;
     z-index: 7;
     /* background: rgb(255 0 0 / 66%); */
-    padding: 50px 15px;
+    /* padding: 50px 15px; */
     text-align: center;
 	/* border: 2px solid #ff4a20; */
 }
@@ -2039,6 +2039,18 @@ textarea:focus {
 .book p {
 	color: #fff;
 }
+
+.form-img
+{
+  background-color:#000;
+  background-image: url(../img/footer-bg.png);
+  background-position: right;
+  padding:45px 0 20px;
+  font-size:15px;
+  line-height:24px;
+  color:#737373;
+}
+
 .site-footer .single-store-location {
     padding: 0px;
     background: transparent;
