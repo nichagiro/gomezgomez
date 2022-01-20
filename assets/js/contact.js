@@ -1,32 +1,52 @@
-$(function () {
-    
-    "use strict";
+const formy = document.getElementById('formy');
+formy.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const button = document.getElementById('btn-contact');
+    button.setAttribute('disabled', true);
+    button.innerText = 'Cargando...'
+    const data = new FormData(formy);
+    fetch('assets/php/contact.php',{
+        body: data,
+        method: 'POST',
 
-    // init the validator
-    $('#ajax-contact').validator();
-
-    // when the form is submitted
-    $('#ajax-contact').on('submit', function (e) {
-
-        // if the validator does not prevent form submit
-        if (!e.isDefaultPrevented()) {
-            var url = "assets/php/contact.php";
-
-            // POST values in the background the the script URL
-            $.ajax({
-                type: "POST",
-                url: url,
-                data: $(this).serialize(),
-                success: function (data)
-                {
-
-                    // data = JSON object that contact.php returns
-                    $( "#msgSubmit" ).removeClass( "hidden" );
-                    $('#ajax-contact')[0].reset();
-                    
-                }
-            });
-            return false;
-        }
     })
-});
+    .then(response => response.json())
+    .then(data => {
+        if(data == 'ok'){           
+            ShowAlert('success');
+            formy.reset();
+            SetDisplayButton(true)
+        }
+        else{
+            ShowAlert('danger');
+            SetDisplayButton(false)
+        }
+    });
+})
+
+const ShowAlert = color => {
+    const msg = color == 'info' ? 'Se envio con exito' : 'llene todos los campos'
+    const alert =   
+        `<div id="alert" class="alert alert-${color} fixed-top w-100" role="alert">
+            ${msg}
+        </div>`
+
+    document.getElementById('alertContact').innerHTML =alert;
+
+    setTimeout(() => {
+        document.getElementById('alert').remove()
+    }, 4000);
+}
+
+const SetDisplayButton = (disabled) => {
+    const button = document.getElementById('btn-contact');
+    if(disabled){
+        button.innerText = 'ENVIADO'
+        button.removeAttribute('disabled');
+    } 
+    else{
+        button.removeAttribute('disabled');
+        button.innerText = 'ENVIA MENSAJE'
+    }
+}
+

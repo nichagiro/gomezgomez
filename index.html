@@ -271,29 +271,40 @@
     <!-- featured Section End -->
 
 	<!-- CONTACT FORM -->
-	<div class="container-fluid my-5 shadow-lg wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="section-title">
+				<h5>COTIZACIONES Y PREGUNTAS.</h5>
+				<h2>
+					FORMULARIO DE CONTACTO
+				</h2>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid mb-5 shadow-lg wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
 		<div class="row text-white flex-column-reverse flex-lg-row">
 		  <div class="col-12 col-lg-6 p-4 p-sm-5 p-md-5 text- text-md-left form-img">
-			<form>
+			<form  id="formy">
 				<div class="row">
 				  <div class="col">
-					<input type="text" class="form-control" placeholder="Nombre*">
+					<input type="text" name="name" class="form-control" placeholder="Nombre*">
 				  </div>
 				  <div class="col">
-					<input type="text" class="form-control" placeholder="Email*">
+					<input type="text" name="email" class="form-control" placeholder="Email*">
 				  </div>
 				</div>
 				<div class="row my-4">
 					<div class="col">
-					  <input type="text" class="form-control" placeholder="Telefono">
+					  <input type="text" name="phone" class="form-control" placeholder="Telefono">
 					</div>
 					<div class="col">
-					  <input type="text" class="form-control" placeholder="Asunto">
+					  <input type="text" name="subject" class="form-control" placeholder="Asunto">
 					</div>
 				  </div>
 				  <div class="row my-4">
 					<div class="col">
 						<textarea 
+							name="msg"
 							class="form-control" 
 							style="resize: none" 
 							rows="5"
@@ -302,7 +313,7 @@
 					</div>
 				  </div>
 				  <div class="row justify-content-center">
-					<button class="button home-btn-1 js-scroll">
+					<button type="submit" id="btn-contact" class="button home-btn-1 js-scroll">
 						Enviar
 					</button>
 				  </div>
@@ -360,7 +371,7 @@
 					<h2>Contacto</h2>
 					<div class="contact-store-location-box">
 						<div class="single-store-location">
-							<p><i class="fa fa-envelope"></i> <a href="mailto:mudanzas@trasteosgomezgomez.com"> info@exmaple.com</a></p>
+							<p><i class="fa fa-envelope"></i> <a href="mailto:mudanzas@trasteosgomezgomez.com">admin@trasteosgomezgomez.com</a></p>
 							<p><i class="fa fa-map"></i> Carrera 1G #46A - 23, Salomia</p>
 							<p><i class="fa fa-phone"></i> <a> 4396831-5244494-4393880-3155703421-3155220780-3105334254</a></p>
 						</div>
@@ -387,6 +398,11 @@
 		  </div>
 		</div>
   </footer>	
+
+  <!-- ALERT CONTACT -->
+  <div id="alertContact"></div> 
+  <!-- ALERT CONTACT -->
+
 	<!-- Start Back to Top -->
 	<div class="back-to-top">
 		<i class="fa fa-caret-up"></i>
