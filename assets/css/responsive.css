@@ -2,6 +2,10 @@
 	.call-now{
 		font-size: 20px;
 	}
+	.back-to-top {
+		top: 90%;
+		right: 15px;
+	}
 	.slider .parallax-slider .caption{
 		margin-top: auto;
 	}
@@ -102,6 +106,16 @@
 
 
 @media only screen and (max-width: 479px) {
+	.call{
+		top: 75%;
+	}
+	.whatsapp{
+		top: 87%;
+	}
+	.back-to-top {
+		top: 90%;
+		right: 15px;
+	}
 	.section-title h2 {
 		font-size: 30px;
 	}

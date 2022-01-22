@@ -218,8 +218,9 @@ ul {
 	margin-bottom: 65px;
 }
 .section-title h5 {
-	border: 1px solid var(--color-primary);
-    color: var(--color-primary) !important;
+	border: 1px solid green;
+    color: white !important;
+	background: var(--gradient-primary);
     font-size: 18px;
     text-transform: uppercase;
     font-weight: 700;
@@ -266,6 +267,30 @@ ul {
 	-webkit-transition: .9s;
 	transition: .9s;
 }
+.call{
+	border-radius: 50%;
+	position: fixed;
+	cursor: pointer;
+	top: 70%;
+	left: 15px;
+	color: #ffffff;
+	background: var(--gradient-primary);
+	z-index: 99;
+	width: 60px;
+	text-align: center;
+	height: 60px;
+	line-height: 42px;
+	-webkit-transition: .9s;
+	transition: .9s;
+}
+.call:hover {
+	color: white !important;
+}
+
+.whatsapp:hover{
+	color: white !important;
+}
+
 .back-to-top {
 	position: fixed;
 	cursor: pointer;
@@ -722,7 +747,7 @@ ul {
 	/* color: #333; */
 }
 .navbar-b.navbar-reduce .nav-link:hover {
-	color: #505050;
+	color: var(--color-primary);
 }
 .navbar-b.navbar-reduce .show > .nav-link,
 .navbar-b.navbar-reduce .active > .nav-link,
