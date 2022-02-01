@@ -10,15 +10,15 @@ if($email == '' | $name == '' | $msg =='' | $subject ==''){
     echo json_encode('error');
 }   
 else {
-    if ($phone = '') {
+    if ($phone || $phone == '') {
         $phone = 'No suministrado';
     }
     $to = 'admin@trasteosgomezgomez.com';
     $asunto = "Correo desde pagina web";
     $message =  "Email: $email".
-                "\Nombre: $name".
-                "\Telefono: $phone".
-                "\Asunto: $subject".
+                "\nNombre: $name".
+                "\nTelefono: $phone".
+                "\nAsunto: $subject".
                 "\nMensaje: $msg";
     $headers = "From:".$name.' <'.$email.'>';
     mail($to, $subject, $message, $headers);
