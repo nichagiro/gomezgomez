@@ -13,7 +13,7 @@ formy.addEventListener('submit', (e) => {
     .then(response => response.json())
     .then(data => {
         if(data == 'ok'){           
-            ShowAlert('success');
+            ShowAlert('info');
             formy.reset();
             SetDisplayButton(true)
         }

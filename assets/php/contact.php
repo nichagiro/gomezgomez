@@ -20,7 +20,7 @@ else {
                 "\Telefono: $phone".
                 "\Asunto: $subject".
                 "\nMensaje: $msg";
-    // $headers = "From:".$name.' <'.$email.'>';
-    // mail($to, $subject, $message, $headers);
+    $headers = "From:".$name.' <'.$email.'>';
+    mail($to, $subject, $message, $headers);
     echo json_encode ('ok');
 }
